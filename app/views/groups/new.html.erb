@@ -1,0 +1,24 @@
+<div class="new-group-container">
+<nav class="nav">
+<%=link_to groups_path do %> <i class="fa-solid fa-chevron-left" style="color: #f3f4f7;"></i>
+<%end%>
+<h3 class="tans-header">Add Category</h3>
+
+</nav>
+
+<div class = "new-form">
+<%= form_with model: @group do |form|%>
+
+
+<div class="group-form">
+<%= form.text_field :name, placeholder: "Name", :class => 'field'%>
+<%= form.text_field :icon, placeholder: 'Icon', :class => 'field'%>
+</div>
+
+<%= form.button :class => 'submit'%>
+<%end%>
+</div>
+
+
+
+</div>

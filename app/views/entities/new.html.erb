@@ -1,0 +1,24 @@
+<div class="new-group-container">
+<nav class="nav">
+<%=link_to group_path(params[:group_id]) do %> <i class="fa-solid fa-chevron-left" style="color: #f3f4f7;"></i>
+<%end%>
+<h3 class="tans-header">Add Entity</h3>
+
+</nav>
+
+<div class = "new-form">
+<%= form_with model: @entity, url: group_entities_path(params[:group_id]) do |form|%>
+
+
+<div class="group-form">
+<%= form.text_field :name, placeholder: "Name", :class => 'field'%>
+<%= form.number_field  :amount, placeholder: 'Amount', :class => 'field'%>
+</div>
+
+<%= form.button :class => 'submit'%>
+<%end%>
+</div>
+
+
+
+</div>

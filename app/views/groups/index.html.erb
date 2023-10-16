@@ -1,0 +1,42 @@
+<div class="transaction-container">
+    <nav class="nav">
+   
+    <i class="fa-solid fa-bars" style="color: #f9fafb;"></i>
+    <h3 class="tans-header">TRANSACTIONS</h3>
+    <i class="fa-solid fa-magnifying-glass" style="color: #fafcff;"></i>
+    </nav>
+    <div class="recent-container">
+     <% if user_signed_in? %>
+     <div class= "user-holder"><%= current_user.name %>
+<%= button_to "Log out", destroy_user_session_path, method: :delete %>
+       </div>
+       <%end%>
+        <div class="most-recent">
+            <h4>Most recent</h4>
+            <span></span>
+        </div>
+        <h4 class="ancient">Most ancient</h4>
+    </div>
+<div class="transaction-wrapper">
+<%@groups.each do |group|%>
+<%= link_to  group,  class: 'link'  do%>
+    <div class= "transaction">
+        <%=image_tag(group.icon)%>
+        <div class= "name">
+            <h4><%=group.name%></h4>
+            <h4 class= "date"><%=group.updated_at%></h4>
+        </div>
+        <h4 class= "amount"><%="Total: $ #{group.total_amount}"%></h4>
+    </div>
+<%end%>
+
+<%end%>
+<div>
+
+<button class="add-catagory"><%=link_to "Add a New Catagory", new_group_path%>
+
+</button>
+<div class="scan">
+<span>SCAN</span>
+</div>
+</div>

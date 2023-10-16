@@ -1,15 +1,431 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Nunito:wght@200;300;400;500;600;800;1000&family=Open+Sans:ital,wght@0,300;1,300&family=Roboto+Slab:wght@300;400;500&display=swap');
+
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+===============
+Variables
+===============
+*/
+
+:root {
+  --clr-primary: #645cff;
+  --clr-primary-dark: #282566;
+  --clr-primary-light: #a29dff;
+  --clr-primary-blue: #3778c2;
+  --clr-dark-blue: #3d75b6;
+  --clr-primary-green: #5fb523;
+  --clr-primary-grey: #434b54;
+  --clr-grey-1: #102a42;
+  --clr-grey-5: #617d98;
+  --clr-light-grey: #7fa5cb;
+  --clr-grey-10: #f1f5f8;
+  --clr-group-background: #e8ebee;
+  --clr-white: #fff;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-black: #121212;
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --radius: 0.25rem;
+  --large-screen-width: 1170px;
+  --small-screen-width: 90vw;
+  --fixed-width: 50rem;
+  --pale-gray: #f5f6fa;
+  --clr-blue: #0290ff;
+  --font-rob: roboto slab;
+  --font-mont: montserrat;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--clr-group-background);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
+  font-family: var(--font-mont);
+}
+
+a,
+li {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 0.875rem;
+}
+
+p {
+  margin-bottom: 1.25rem;
+}
+
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+  }
+
+  body {
+    font-size: 1rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+
+/* more global css */
+
+.btn {
+  text-transform: uppercase;
+  background: var(--clr-primary);
+  color: var(--clr-white);
+  padding: 0.375rem 0.75rem;
+  letter-spacing: var(--spacing);
+  display: inline-block;
+  font-weight: 700;
+  transition: var(--transition);
+  font-size: 0.875rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+  color: var(--clr-primary);
+  background: var(--clr-primary-light);
+}
+
+/*
+===============
+Splash screen
+===============
+*/
+
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 2rem;
+}
+
+.splash-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid red;
+  margin: 2rem;
+  align-self: center;
+  justify-self: center;
+  width: 100%;
+  height: 70%;
+  border-radius: 4px;
+  background: linear-gradient(324deg, rgb(3, 169, 244) 33%, rgb(189, 142, 241) 88%);
+}
+
+.splash-container h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.splash-container p {
+  margin-bottom: 2rem;
+}
+
+.btn-holder-spl {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  padding: 2rem;
+  border: 1px solid var(--clr-primary-green);
+}
+
+.btn-holder-spl button {
+  padding: 1rem 1.5rem;
+}
+
+/*
+===============
+Groups/ Index
+===============
+*/
+.transaction-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  background-color: var(--clr-primary-blue);
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  padding: 1.5rem;
+}
+
+.fa-bars {
+  font-size: 2rem;
+}
+
+.tans-header {
+  color: var(--clr-grey-10);
+}
+
+.fa-magnifying-glass {
+  font-size: 2rem;
+}
+
+.recent-container {
+  display: flex;
+  width: 100vw;
+  background-color: var(--clr-dark-blue);
+  padding: 0.5rem;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  top: 5.5rem;
+  justify-content: space-between;
+}
+
+.most-recent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.most-recent h4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-grey-10);
+}
+
+.most-recent span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 0.3rem;
+  height: 0.3rem;
+  background-color: var(--clr-grey-10);
+  border-radius: 0.3rem;
+  position: relative;
+  bottom: 0.5rem;
+}
+
+.user-holder {
+  margin-left: 1rem;
+}
+
+.user-holder button {
+  padding: 0.3rem;
+}
+
+.ancient {
+  color: var(--clr-light-grey);
+  border-radius: 0.3rem;
+}
+
+.transaction-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  top: 7.3rem;
+  left: 0;
+  padding: 1rem;
+}
+
+.transaction {
+  display: flex;
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--clr-white);
+  border-radius: 3px;
+  border: 1px solid var(--clr-group-background);
+  transition: transform 0.3s ease-out;
+  margin-bottom: 1rem;
+}
+
+.link {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+}
+
+.transaction:hover {
+  transform: translate(0, -5px);
+}
+
+.transaction img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 3px;
+}
+
+.name {
+  align-self: center;
+  margin-left: 1rem;
+}
+
+.amount {
+  font-size: 1rem;
+  margin-left: auto;
+  align-self: center;
+}
+
+.add-catagory {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clr-primary-blue);
+  padding: 1rem;
+  position: fixed;
+  bottom: 9.3rem;
+  left: 0;
+  justify-self: center;
+  margin-left: 40%;
+  border-radius: 0.3rem;
+}
+
+.scan {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  background-color: var(--clr-primary-green);
+  padding: 1.5rem;
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  border-radius: 0.3rem;
+}
+
+.scan span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--clr-grey-10);
+  border-radius: 4px;
+  color: var(--clr-grey-10);
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem;
+  font-size: 2rem;
+}
+
+/*
+===============
+Groups/ New
+===============
+*/
+.new-group-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.fa-chevron-left {
+  font-size: 2rem;
+}
+
+.new-form {
+  width: 100%;
+  position: relative;
+  top: 5rem;
+}
+
+.group-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  color: var(--clr-group-background);
+  border: 1px solid var(--clr-group-background);
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+}
+
+.submit {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  color: var(--clr-blue);
+  font-size: 1.3rem;
+  border: 1px solid var(--clr-group-background);
+  background-color: var(--clr-white);
+  font-weight: 600;
+  transition: transform 0.3s ease-out;
+  margin-bottom: 1rem;
+}
+
+.submit:hover {
+  transform: translate(0, -5px);
+}
