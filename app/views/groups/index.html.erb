@@ -18,7 +18,9 @@
         <h4 class="ancient">Most ancient</h4>
     </div>
 <div class="transaction-wrapper">
+
 <%@groups.each do |group|%>
+<%if can? :read, group%>
 <%= link_to  group,  class: 'link'  do%>
     <div class= "transaction">
         <%=image_tag(group.icon)%>
@@ -29,7 +31,7 @@
         <h4 class= "amount"><%="Total: $ #{group.total_amount}"%></h4>
     </div>
 <%end%>
-
+<%end%>
 <%end%>
 <div>
 
