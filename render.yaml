@@ -1,18 +1,18 @@
 databases:
-  - name: recipe
-    databaseName: recipe_7wq7
-    user: recipe_7wq7_user
+  - name: test-db
+    databaseName: test_db_1clj
+    user: test_db_1clj_user
 
 services:
   - type: web
-    name: Bolo
+    name: budget-deploy
     runtime: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: recipe_7wq7
+          name: test_db_1clj
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
