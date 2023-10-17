@@ -78,6 +78,24 @@
   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- LIVE DEMO -->
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- [Live Demo Link](https://weather-app-9u1m.onrender.com/)
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- Video Presentation -->
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- [Video Presentation](https://drive.google.com/file/d/1g1l70naqm4rzjm8MvFSNl9NXXkVIqlHX/view?usp=sharing)
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 <!-- GETTING STARTED -->
 
