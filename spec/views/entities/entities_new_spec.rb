@@ -9,7 +9,7 @@ RSpec.feature 'New Entity', type: :feature do
                           icon: 'https://images.unsplash.com/photo-1682686580186-b55d2a91053c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80', user:) # rubocop:disable Layout/LineLength
     visit groups_path
     first('.link').click
-    first('button', text: 'Add a New Transaction').click
+    first('.scan', text: 'Add a New Transaction').click
     sleep(5)
   end
 

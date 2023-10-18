@@ -17,7 +17,7 @@ RSpec.feature 'Entitys Index Page', type: :feature do
 
   scenario 'User clicks on a New Entity and is redirected to their New Entity page' do
     first('.link').click
-    first('button', text: 'Add a New Transaction').click
+    first('.scan', text: 'Add a New Transaction').click
     sleep(5)
     expect(page).to have_current_path("/groups/#{@group.id}/entities/new")
   end

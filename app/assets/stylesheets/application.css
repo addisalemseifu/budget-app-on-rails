@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Nunito:wght@200;300;400;500;600;800;1000&family=Open+Sans:ital,wght@0,300;1,300&family=Roboto+Slab:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Nunito:wght@200;300;400;500;600;800;1000&family=Open+Sans:ital,wght@0,300;1,300&family=Roboto+Slab:wght@300;400;500&display=swap'
+);
+@import url('https://fonts.googleapis.com/css?family=Tangerine'
+);
 
 /*
 ===============
@@ -146,8 +149,8 @@ Splash screen
   align-items: center;
   justify-content: center;
   width: 100vw;
-  height: 100vh;
-  padding: 2rem;
+  height: 95vh;
+  padding: 1rem;
 }
 
 .splash-container {
@@ -155,35 +158,53 @@ Splash screen
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 2px solid red;
   margin: 2rem;
   align-self: center;
   justify-self: center;
   width: 100%;
-  height: 70%;
+  height: 100%;
   border-radius: 4px;
-  background: linear-gradient(324deg, rgb(3, 169, 244) 33%, rgb(189, 142, 241) 88%);
 }
 
 .splash-container h2 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin-bottom: 2rem;
-}
-
-.splash-container p {
-  margin-bottom: 2rem;
+  align-self: center;
+  justify-self: center;
+  margin-top: 20rem;
+  font-family: 'Tangerine', serif;
 }
 
 .btn-holder-spl {
   display: flex;
-  justify-content: space-between;
-  width: 60%;
-  padding: 2rem;
-  border: 1px solid var(--clr-primary-green);
+  flex-direction: column;
+  width: 100%;
+  margin-top: auto;
 }
 
 .btn-holder-spl button {
   padding: 1rem 1.5rem;
+  width: 100%;
+}
+
+.log-btn {
+  background-color: var(--clr-primary-blue);
+  color: var(--clr-white);
+  font-weight: 600;
+  border: none;
+  border-radius: 3px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.signup-btn {
+  padding: 1rem 1.5rem;
+  width: 100%;
+  font-weight: 600;
+  border: none;
+  color: var(--clr-grey-5);
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 /*
@@ -210,15 +231,16 @@ Groups/ Index
 }
 
 .fa-bars {
-  font-size: 2rem;
+  font-size: 1.2rem;
 }
 
 .tans-header {
   color: var(--clr-grey-10);
+  font-size: 1rem;
 }
 
 .fa-magnifying-glass {
-  font-size: 2rem;
+  font-size: 1.2rem;
 }
 
 .recent-container {
@@ -229,7 +251,7 @@ Groups/ Index
   align-items: center;
   position: fixed;
   z-index: 1;
-  top: 5.5rem;
+  top: 4.7rem;
   justify-content: space-between;
 }
 
@@ -246,6 +268,7 @@ Groups/ Index
   align-items: center;
   justify-content: center;
   color: var(--clr-grey-10);
+  font-size: 0.6rem;
 }
 
 .most-recent span {
@@ -253,25 +276,29 @@ Groups/ Index
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 0.3rem;
-  height: 0.3rem;
+  width: 0.2rem;
+  height: 0.2rem;
   background-color: var(--clr-grey-10);
-  border-radius: 0.3rem;
+  border-radius: 0.2rem;
   position: relative;
   bottom: 0.5rem;
+  font-size: 0.6rem;
 }
 
 .user-holder {
   margin-left: 1rem;
+  font-size: 0.6rem;
 }
 
 .user-holder button {
   padding: 0.3rem;
+  font-size: 0.6rem;
 }
 
 .ancient {
   color: var(--clr-light-grey);
   border-radius: 0.3rem;
+  font-size: 0.6rem;
 }
 
 .transaction-wrapper {
@@ -320,7 +347,6 @@ Groups/ Index
 }
 
 .amount {
-  font-size: 1rem;
   margin-left: auto;
   align-self: center;
 }
@@ -345,12 +371,13 @@ Groups/ Index
   align-items: center;
   width: 100vw;
   background-color: var(--clr-primary-green);
-  padding: 1.5rem;
+  padding: 0.5rem;
   position: fixed;
   z-index: 1;
   bottom: 0;
   left: 0;
   border-radius: 0.3rem;
+  cursor: pointer;
 }
 
 .scan span {
@@ -360,10 +387,12 @@ Groups/ Index
   border: 2px solid var(--clr-grey-10);
   border-radius: 4px;
   color: var(--clr-grey-10);
-  width: 100%;
+  width: 93vw;
   height: 100%;
-  padding: 1.5rem;
-  font-size: 2rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 /*
@@ -415,10 +444,9 @@ Groups/ New
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 2rem;
   padding: 1.5rem;
   color: var(--clr-blue);
-  font-size: 1.3rem;
+  font-size: 1rem;
   border: 1px solid var(--clr-group-background);
   background-color: var(--clr-white);
   font-weight: 600;

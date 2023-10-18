@@ -18,11 +18,11 @@ RSpec.feature 'Groups Index Page', type: :feature do
     expect(page).to have_content('Macdonalds')
     expect(page).to have_content('Starbucks')
     expect(page).to have_content('Most Recent')
-    expect(page).to have_content('TRANSACTIONS')
+    expect(page).to have_content('CATEGORIES')
   end
 
   scenario 'User clicks on a New Group and is redirected to their New Group page' do
-    first('a', text: 'Add a New Catagory').click
+    first('.scan', text: 'Add a New Catagory').click
     expect(page).to have_current_path(new_group_path)
   end
 end

@@ -1,7 +1,6 @@
 <div class= "main-container">
 <div class= "splash-container">
-<h2>Welcome to BOLO !!</h2>
-<P> where you can "Be On A Look Out for Your Money</P>
+<h2>BOLO</h2>
 
 
  <% if user_signed_in? %>
@@ -12,11 +11,11 @@
 <div class="btn-holder-spl">
 
 <%= link_to new_user_session_path do  %>
-<button>Log in</button>
+<button class= "log-btn">Log in</button>
 <%end%>
 
 <%= link_to new_user_registration_path do  %>
-<button>Sign up</button>
+<button class= "signup-btn">Sign up</button>
 <%end%>
 </div>
 <%end%>
