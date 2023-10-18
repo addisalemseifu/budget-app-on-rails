@@ -1,0 +1,35 @@
+<div class="transaction-container">
+    <nav class="nav">
+ <%=link_to groups_path do %> <i class="fa-solid fa-chevron-left" style="color: #f3f4f7;"></i>
+<%end%>
+    <h3 class="tans-header"><%="Total: $ #{@total_amount}"%></h3>
+    <i class="fa-solid fa-magnifying-glass" style="color: #fafcff;"></i>
+    </nav>
+    <div class="recent-container">
+        <div class="most-recent">
+            <h4>Most recent</h4>
+            <span></span>
+        </div>
+        <h4 class="ancient">Most ancient</h4>
+    </div>
+<div class="transaction-wrapper">
+<%@group_entities.each do |group_entity|%>
+    <div class= "transaction">
+        
+        <div class= "name" class= "det-name">
+            <h5 class= "amount"><%=group_entity.entity.name%></h5>
+            <h5 class= "date"><%=group_entity.entity.updated_at%></h5>
+            <h5><%="$#{group_entity.entity.amount}"%></h5>
+        </div>
+        
+    </div>
+
+<%end%>
+
+
+<div class="scan">
+        <%=link_to "/groups/#{params[:id]}/entities/new" do %>
+            <span>Add a New Transaction</span>
+        <%end%>
+    </div>
+</div>

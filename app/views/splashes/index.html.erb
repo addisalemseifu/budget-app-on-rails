@@ -1,0 +1,23 @@
+<div class= "main-container">
+<div class= "splash-container">
+<h2>BOLO</h2>
+
+
+ <% if user_signed_in? %>
+  <div class= "user-holder"><%= current_user.name %>
+<%= button_to "Log out", destroy_user_session_path, method: :delete %></div>
+   
+<% else %>
+<div class="btn-holder-spl">
+
+<%= link_to new_user_session_path do  %>
+<button class= "log-btn">Log in</button>
+<%end%>
+
+<%= link_to new_user_registration_path do  %>
+<button class= "signup-btn">Sign up</button>
+<%end%>
+</div>
+<%end%>
+</div>
+</div>
